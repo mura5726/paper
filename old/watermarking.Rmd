@@ -46,7 +46,7 @@ In Japanese it is called "電子透かし".
 
 http://www.neuro.sfc.keio.ac.jp/publications/pdf/naoebest.pdf
 
-### 1.4. Auther
+### 1.4. Author
 
 Kensuke Naoe, Keio University, Japan <br> Hideyasu Sasaki, Ritsumeikan University, Japan <br> Yoshiyasu Takefuji, Keio University, Japan
 
@@ -72,9 +72,9 @@ International Journal of Systems and Service-Oriented Engineering, 1(1), 46-61, 
 
 - The proposed method is to contribute to secure visual digital watermarking without losing any detailed data of visual objects or any additional resources of hiding visual objects as molds to embed hidden visual objects.
 
-- This article is different from the previous research in terms of embedding size where this article does not embed any information to the target content and also implies that the machine learning algorithm is not limited only to the neural network model as proposed in auther's previous research.
+- This article is different from the previous research in terms of embedding size where this article does not embed any information to the target content and also implies that the machine learning algorithm is not limited only to the neural network model as proposed in author's previous research.
 
-- It is difficult to use one algorithm together with another, because each other obstruct the embedded information and causing one to destroy another. But because auther's proposed method does not affect the target content at all, one can apply new watermark seamlessly without altering the fingerprint using the proposed method.
+- It is difficult to use one algorithm together with another, because each other obstruct the embedded information and causing one to destroy another. But because author's proposed method does not affect the target content at all, one can apply new watermark seamlessly without altering the fingerprint using the proposed method.
 
 ## 3. Where is the essence of technology and method in this research
 
@@ -134,7 +134,7 @@ Coordinates will determine the input patterns to the neural network for the embe
 ##### Figure 8. Multi-layered perceptron model
 ![](pics/pics5.png)
 
-- With the threshold value of 0.5, the pro- posed method was able to extract proper signals for proper patterns. For example, output signals in binary bit pattern for pattern 1 is [00000], output signals for pattern 11 is [01010] and etc. The results of this experiment, output signals for original image, JPEG compressed image and high pass filtered image are shown in Figure 9, 10, 11, 12 and 13 for each neural network.
+- With the threshold value of 0.5, the proposed method was able to extract proper signals for proper patterns. For example, output signals in binary bit pattern for pattern 1 is [00000], output signals for pattern 11 is [01010] and etc. The results of this experiment, output signals for original image, JPEG compressed image and high pass filtered image are shown in Figure 9, 10, 11, 12 and 13 for each neural network.
 
 ##### Figure 9. Signal values for network 1
 ![](pics/pics9.png)

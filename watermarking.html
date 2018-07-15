@@ -262,8 +262,9 @@ $(document).ready(function () {
 <p>Coordinates will determine the input patterns to the neural network for the embedding and extraction process. For extracting, there are two keys to be shared, that is the watermark extraction key and feature extraction key, between the embedding and extracting users. Former is the neural network weights created in the embedding process. Latter is the coordinates of feature sub-blocks. Only with the presence of the proper keys are able to generate proper watermark patterns as shown in Figure 5 and 6.</p>
 </div>
 </div>
-<div id="how-to-validation-of-the-efficiency" class="section level3">
-<h3>4. How to validation of the efficiency</h3>
+</div>
+<div id="how-to-validation-of-the-efficiency" class="section level2">
+<h2>4. How to validation of the efficiency</h2>
 <ul>
 <li><p>In this research, authors examined if they can retrieve a watermark patterns from both original image and graphically changed image. For the latter, they choose high pass filter and JPEG compressed image as the alteration method.</p></li>
 <li><p>They used TIFF format Lenna image, which is 512*512 pixels in size, as target content data. Original and high pass filtered Lenna image is shown in Figure 7.</p></li>
@@ -328,7 +329,6 @@ $(document).ready(function () {
 <ul>
 <li>The output signals retrieved from high pass filtered image are shown to be slightly different compared to the output signals for the original image and also the output signals retrieved from JPEG compressed image is damaged more than of filtered image, but with the same output threshold of 0.5, they were able to retrieve same hidden watermark patterns for all 32 set from high pass filtered image and JPEG compressed image. These results showed the robustness to high pass filtering and JPEG compression alteration.</li>
 </ul>
-</div>
 </div>
 </div>
 <div id="what-kind-of-discussion-is-there" class="section level2">
