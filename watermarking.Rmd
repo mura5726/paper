@@ -1,0 +1,159 @@
+---
+title: "Secure Key Generation for Static Visual Watermarking by Machine learning in Intelligent Systems and Services"
+author: "Katsunari Murase"
+date: "2018/7/16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 0. Agenda
+
+1. What is this research
+2. Where is better than previous research
+3. Where is the essence of technology and method in this research
+4. How to validation of the efficiency
+5. What kind of discussion is there
+
+## 1. What is this research
+
+### 1.1. (note) What is the Digital Watermark
+
+> "A Digital watermark is a sort of marker secretly embedded in a noise-tolerant signal, for example, a sound, video or picture information. It is regularly used to identify responsibility of copyright for such signal."
+
+In Japanese it is called "電子透かし".
+
+[New Age Copyright Protection: Digital Watermarking](https://www.blogcatalog.com/new-age-copyright-protection-digital-watermarking/)
+
+##### Figure 1. What is the Digital Watermark
+![](pics/pics1.jpg)
+
+### 1.2. Abstract
+
+- The authors propose a method of key generation scheme (Figure 2) for static visual digital watermarking (Figure 3) by using machine learning technology, neural network as its exemplary approach for machine learning method.
+
+- The proposed method is to provide intelligent mobile collaboration with secure data transactions using machine learning approaches, herein neural network approach as an exemplary technology. 
+
+##### Figure 2. Key generation scheme in embedding procedure
+![](pics/pics2.png)
+
+##### Figure 3. Watermark extraction scheme in extraction procedure
+![](pics/pics3.png)
+
+### 1.3. Paper URL
+
+http://www.neuro.sfc.keio.ac.jp/publications/pdf/naoebest.pdf
+
+### 1.4. Auther
+
+Kensuke Naoe, Keio University, Japan <br> Hideyasu Sasaki, Ritsumeikan University, Japan <br> Yoshiyasu Takefuji, Keio University, Japan
+
+### 1.5. Publication
+
+International Journal of Systems and Service-Oriented Engineering, 1(1), 46-61, January-March 2010
+
+### 1.6. Backgrounds
+
+- The emergence of the Internet with rapid progress of information technologies, digital contents are commonly seen in our daily life distributed through the network.
+
+- Due to the characteristics of digital contents are easy to make an exact copy and to alter the content itself, illegal distribution and copying of digital contents has become main concerns for authors, publishers and legitimate owners of the contents.
+
+- To protect digital content, previous researches have developed “Public Key Infrastructure” and “Secure Key Sharing”.
+
+- Moreover, digital watermarking technologies are noticed to substitute or to complement the conventional cryptographic schemes.
+
+- Furthermore, in the era of mobile devices and technologies, conventional cryptographic schemes are highly power consuming and time consuming, which are not suitable for these types of devices.
+
+- Hence, necessary information must be obtainable with less calculation cost and power consumption.
+
+## 2. Where is better than previous research
+
+- The proposed method is to contribute to secure visual digital watermarking without losing any detailed data of visual objects or any additional resources of hiding visual objects as molds to embed hidden visual objects.
+
+- This article is different from the previous research in terms of embedding size where this article does not embed any information to the target content and also implies that the machine learning algorithm is not limited only to the neural network model as proposed in auther's previous research.
+
+- It is difficult to use one algorithm together with another, because each other obstruct the embedded information and causing one to destroy another. But because auther's proposed method does not affect the target content at all, one can apply new watermark seamlessly without altering the fingerprint using the proposed method.
+
+## 3. Where is the essence of technology and method in this research
+
+### 3.1. Generation of extraction key
+
+1. Feature extraction by frequency transformation of target image
+2. Selection of the feature regions according to the feature extraction attributes and saved as feature extraction key
+3. Prepare watermark patterns to be embedded
+4. Generation of extraction key to output watermark patterns by back propagation learning of neural network using feature extraction key
+5. Save the generated neural network classifier as watermark extraction key
+
+### 3.2. Extraction of watermark patterns
+
+1. Obtain feature extraction key and watermark extraction key
+2. Feature extraction of target image using the feature extraction key
+3. Construct a neural network model using watermark extraction key
+4. Observe the output patterns from neural network using both keys
+
+##### Figure 4. System structure for extraction
+![](pics/pics4.png)
+
+### 3.3 Neural network structure for enbedding and extracting procedure 
+
+For extraction process, same neural network structure is constructed using the generated watermark extraction key. Only with the proper feature extraction key and watermark extraction key will be able to output the corresponding watermark patterns. These embedding and extraction procedure are shown in diagram in Figure 5 and 6.
+
+##### Figure 5. Embedding procedure
+![](pics/pics6.png)
+
+##### Figure 6. Extracting procedure
+![](pics/pics7.png)
+
+### 3.4 Define necessary parameters for embedding and extracting
+
+#### The number of watermarking patterns to embed
+More the number of watermarking patterns, the more data can be embedded, but introducing large number of watermarking patterns will result in high calculation cost.
+
+#### The coordinate of the sub-blocks
+Coordinates will determine the input patterns to the neural network for the embedding and extraction process. For extracting, there are two keys to be shared, that is the watermark extraction key and feature extraction key, between the embedding and extracting users. Former is the neural network weights created in the embedding process. Latter is the coordinates of feature sub-blocks. Only with the presence of the proper keys are able to generate proper watermark patterns as shown in Figure 5 and 6.
+
+### 4. How to validation of the efficiency
+
+- In this research, authors examined if they can retrieve a watermark patterns from both original image and graphically changed image. For the latter, they choose high pass filter and JPEG compressed image as the alteration method.
+
+- They used TIFF format Lenna image, which is 512*512 pixels in size, as target content data. Original and high pass filtered Lenna image is shown in Figure 7.
+
+##### Figure 7. Original Lenna image and filtered image
+![](pics/pics8.png)
+
+- They embedded 32 different watermark patterns as hidden signals. That is, hidden signals are [00000] for pattern 1, [00001] for pattern 2, ... [11111] for pattern 32.
+
+- In this experiment, network 1 represents the largest binary bit and network 5 represents the smallest binary bit.
+
+- The number of hidden layer units is set to 11 including one bias unit. Learning process is repeated until the output values generate to a learning threshold of 0.1. Also, the output threshold in this experiment is set to 0.5.
+
+- This neural network structure is shown in Figure 8
+
+##### Figure 8. Multi-layered perceptron model
+![](pics/pics5.png)
+
+- With the threshold value of 0.5, the pro- posed method was able to extract proper signals for proper patterns. For example, output signals in binary bit pattern for pattern 1 is [00000], output signals for pattern 11 is [01010] and etc. The results of this experiment, output signals for original image, JPEG compressed image and high pass filtered image are shown in Figure 9, 10, 11, 12 and 13 for each neural network.
+
+##### Figure 9. Signal values for network 1
+![](pics/pics9.png)
+
+##### Figure 10. Signal values for network 2
+![](pics/pics10.png)
+
+##### Figure 11. Signal values for network 3
+![](pics/pics11.png)
+
+##### Figure 12. Signal values for network 4
+![](pics/pics12.png)
+
+##### Figure 13. Signal values for network 5
+![](pics/pics13.png)
+
+
+- The output signals retrieved from high pass filtered image are shown to be slightly different compared to the output signals for the original image and also the output signals retrieved from JPEG compressed image is damaged more than of filtered image, but with the same output threshold of 0.5, they were able to retrieve same hidden watermark patterns for all 32 set from high pass filtered image and JPEG compressed image. These results showed the robustness to high pass filtering and JPEG compression alteration.
+
+## 5. What kind of discussion is there
+
+- The proposed watermark extraction method relies on the position of the feature sub-blocks. It is weak to geometric attacks like shrinking, expanding, and rotation of the image.
