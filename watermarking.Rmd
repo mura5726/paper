@@ -1,5 +1,5 @@
 ---
-title: "Secure Key Generation for Static Visual Watermarking by Machine learning in Intelligent Systems and Services"
+title: "Summary of 'Secure Key Generation for Static Visual Watermarking by Machine learning in Intelligent Systems and Services'"
 author: "Katsunari Murase"
 date: "2018/7/16"
 output: html_document
@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 1. What is this research
 2. Where is better than previous research
 3. Where is the essence of technology and method in this research
-4. How to validation of the efficiency
+4. How can the efficiency be validated 
 5. What kind of discussion is there
 
 ## 1. What is this research
@@ -64,9 +64,7 @@ International Journal of Systems and Service-Oriented Engineering, 1(1), 46-61, 
 
 - Moreover, digital watermarking technologies are noticed to substitute or to complement the conventional cryptographic schemes.
 
-- Furthermore, in the era of mobile devices and technologies, conventional cryptographic schemes are highly power consuming and time consuming, which are not suitable for these types of devices.
-
-- Hence, necessary information must be obtainable with less calculation cost and power consumption.
+- Conventional cryptographic schemes are highly power consuming and time consuming, which are not suitable for these types of devices so that necessary information must be obtainable with less calculation cost and power consumption.
 
 ## 2. Where is better than previous research
 
@@ -74,7 +72,7 @@ International Journal of Systems and Service-Oriented Engineering, 1(1), 46-61, 
 
 - This article is different from the previous research in terms of embedding size where this article does not embed any information to the target content and also implies that the machine learning algorithm is not limited only to the neural network model as proposed in author's previous research.
 
-- It is difficult to use one algorithm together with another, because each other obstruct the embedded information and causing one to destroy another. But because author's proposed method does not affect the target content at all, one can apply new watermark seamlessly without altering the fingerprint using the proposed method.
+- Because author's proposed method does not affect the target content at all, one can apply new watermark seamlessly without altering the fingerprint using the proposed method.
 
 ## 3. Where is the essence of technology and method in this research
 
@@ -114,7 +112,7 @@ More the number of watermarking patterns, the more data can be embedded, but int
 #### The coordinate of the sub-blocks
 Coordinates will determine the input patterns to the neural network for the embedding and extraction process. For extracting, there are two keys to be shared, that is the watermark extraction key and feature extraction key, between the embedding and extracting users. Former is the neural network weights created in the embedding process. Latter is the coordinates of feature sub-blocks. Only with the presence of the proper keys are able to generate proper watermark patterns as shown in Figure 5 and 6.
 
-## 4. How to validation of the efficiency
+## 4. How can the efficiency be validated
 
 - In this research, authors examined if they can retrieve a watermark patterns from both original image and graphically changed image. For the latter, they choose high pass filter and JPEG compressed image as the alteration method.
 
